@@ -55,25 +55,31 @@ class BlockSyngas(fluid: Fluid) extends BlockFluidClassic(fluid, MaterialSyngas)
 
   override def neighborChanged(state: IBlockState, world: World, pos: BlockPos, neighborBlock: Block, neighbourPos: BlockPos): Unit = {
     super.neighborChanged(state, world, pos, neighborBlock, neighbourPos)
+    /* DO NOT EXPLOAD
     if (!world.isRemote) {
       for (nPos <- pos.neighbours.values if openFlames.contains(world.getBlockState(nPos).getBlock)) {
         world.setBlockToAir(pos)
         world.createExplosion(null, pos.getX, pos.getY, pos.getZ, 5, true)
       }
     }
+    */
   }
 
   override def onEntityCollidedWithBlock(world: World, pos: BlockPos, state: IBlockState, ent: Entity): Unit = {
+    /* DO NOT EXPLOAD
     if (ent.isBurning && !world.isRemote) {
       world.setBlockToAir(pos)
       world.createExplosion(null, pos.getX, pos.getY, pos.getZ, 5, true)
     }
+    */
   }
 
   override def onBlockDestroyedByExplosion(world: World, pos: BlockPos, exp: Explosion): Unit = {
+    /* DO NOT EXPLOAD
     if (!world.isRemote) {
       world.scheduleUpdate(pos, BlockSyngasFlaming, world.rand.nextInt(5))
       world.setBlockState(pos, BlockSyngasFlaming.getDefaultState, 3)
     }
+    */
   }
 }

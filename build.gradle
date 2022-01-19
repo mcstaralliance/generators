@@ -4,6 +4,8 @@ buildscript {
     }
     repositories {
         mavenCentral()
+        maven { url = "https://maven.aliyun.com/repository/public/" }
+	    maven { url "https://maven.tehnut.info" }
         maven {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
@@ -59,34 +61,50 @@ minecraft {
 
 repositories {
     mavenCentral()
+    maven { url "https://maven.tehnut.info" }
+    maven {
+        url "https://cursemaven.com"
+    }
     maven {
         name = "bdew"
         url = "https://jenkins.bdew.net/maven"
     }
     maven {
-        name "HWYLA"
-        url "http://tehnut.info/maven"
+        name = "Azure-SLP"
+        url = uri("https://pkgs.dev.azure.com/Kotori316/minecraft/_packaging/mods/maven/v1")
     }
     maven {
-        name "JEI"
-        url "http://dvs1.progwml6.com/files/maven"
+        name = "ModMaven"
+        url = "https://modmaven.dev"
     }
-    maven {
-        name = "ic2"
-        url = "http://maven.ic2.player.to/"
-    }
-    maven {
-        name = "tesla"
-        url = "http://maven.epoxide.xyz"
-    }
-    maven {
-        name "OpenComputers"
-        url "http://maven.cil.li/"
-    }
-    maven {
-        name = "CoFH Maven"
-        url = "http://maven.covers1624.net"
-    }
+    // maven {
+    //     name = "bdew"
+    //     url = "https://jenkins.bdew.net/maven"
+    // }
+    // maven {
+    //     name "HWYLA"
+    //     url "https://maven.tehnut.info"
+    // }
+    // maven {
+    //     name "JEI"
+    //     url "http://dvs1.progwml6.com/files/maven"
+    // }
+    // maven {
+    //     name = "ic2"
+    //     url = "http://maven.ic2.player.to/"
+    // }
+    // maven {
+    //     name = "tesla"
+    //     url = "http://maven.epoxide.xyz"
+    // }
+    // maven {
+    //     name "OpenComputers"
+    //     url "http://maven.cil.li/"
+    // }
+    // maven {
+    //     name = "CoFH Maven"
+    //     url = "http://maven.covers1624.net"
+    // }
 }
 
 dependencies {
